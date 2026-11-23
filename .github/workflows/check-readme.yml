@@ -1,0 +1,15 @@
+name: Check README
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the project files
+        uses: actions/checkout@v7
+
+      - name: Check that README.md exists
+        run: test -f README.md
